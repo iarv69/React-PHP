@@ -1,0 +1,6 @@
+{
+    "open-php-html-js-in-browser.customBrowserPath": "/opt/google/chrome/chrome",
+    "open-php-html-js-in-browser.customHost": "localhost:80",
+    "open-php-html-js-in-browser.documentRootFolder": "/opt/lampp/htdocs",
+    "open-php-html-js-in-browser.selectedBrowser": "Chrome"
+}
