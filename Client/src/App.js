@@ -3,11 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
+//axios.defaults.headers.post['Accept'] = 'application/json'
 
 class App extends Component{
   
   state={
-    test:""
+    text:"kkkk"
   };
   
   handleAdd=async e =>{
@@ -22,17 +23,21 @@ class App extends Component{
     e.preventDefault();
     console.log(this.state.text );
 
-    
-       let formData=new FormData();
-    formData.append("text",this.state.text);
-    const url="myPhpProj";
+    let formData=new FormData();
+    formData.append('text',this.state.text);
+    /*const api=axios.create({baseurl:'http://localhost:80'})*/
+    const url="http://localhost:80/myPhpProj/index.php";
 
-    /*const instance = axios.create();
-    axios.post('https://example.com', form, { headers: form.getHeaders() })
-*/
-    axios.post(url,formData)
+    /*axios.post(url,formData)
     .then(res=>console.log(res.data))
     .catch(err=>console.log(err));
+  */
+    
+
+    axios.post(url,{text:this.state.text})//, {
+    .then(res=>console.log(res.data))
+    .catch(err=>console.log(err));
+
   }
 
   render()
