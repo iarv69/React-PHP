@@ -28,8 +28,10 @@ Setup react client
 3) npx create-react-app <name>
 4) npm i bootstrap react-bootstrap
 5) npm i axios 
-6) to stop react web server 
-npx kill-port 3000 
+6) chown -r root:root ../Client
+6) to start/stop react web server 
+`npm start
+npx kill-port 3000` 
 
 Setup PHP server
 ----------------
@@ -54,17 +56,19 @@ A) DB Creation/Administration remotely
 2) create user and add previledges for remote Access
 CREATE USER 'iarv'@localhost IDENTIFIED BY '';
 GRANT ALL PRIVILEGES ON 'mydb'.* TO 'iarv'@localhost;
-3) create db
-4) insert data
-5) create sql installation script
+3) Connect to db
+4) create db Create database <name>
+5) xreate tables and insert data
+6) create sql installation script
 
 B) Local Administration
 1) /opt/lampp/bin/mariadb -u root
 2) create database mydb;
-3) show databeses;
+3) show databases;
 3) use mydb;
 5) show tables;
-6) create table.....
+6) create table <name>
+7) insert data
 
 
 CLONE PROJECT
@@ -79,12 +83,13 @@ git clone
 4) Create symbolic server link to /opt/lampp/htdocs
 ln -sf /home/iarv/Documents/ReactPhp/Server /opt/lampp/htdocs/myPhpProj
 5) start Mariadb and apache (XAMPP should be installed)
-/opt/lampp/lampp restart 
+`/opt/lampp/lampp restart `
 6) Download node modules
-npm i bootstrap react-bootstrap axios
-7) start react client
-cd /home/iarv/Documents/ReactPhp/Client
+`npm i bootstrap react-bootstrap axios`
+7) start/stop react client
+`cd /home/iarv/Documents/ReactPhp/Client
 npm start
+npx kill-port 3000`
 
 
 
